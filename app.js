@@ -39,9 +39,9 @@ function displayWeather(weatherForecast) {
   const weatherElement = document.getElementById("weatherForecast");
   weatherElement.textContent = weatherForecast.daily.weathercode;
   const weatherMinTemp = document.getElementById("weatherMin");
-  weatherMinTemp.textContent = `MIN Temp. ${weatherForecast.daily.temperature_2m_min} °C 🥶`;
+  weatherMinTemp.textContent = `MIN Temp. 🥶  ${weatherForecast.daily.temperature_2m_min} °C`;
   const weatherMaxTemp = document.getElementById("weatherMax");
-  weatherMaxTemp.textContent = `MAX Temp. ${weatherForecast.daily.temperature_2m_max} °C 🥵`;
+  weatherMaxTemp.textContent = `MAX Temp. 🥵  ${weatherForecast.daily.temperature_2m_max} °C `;
 
 const weatherIcon = document.getElementById("img");
 
@@ -62,7 +62,14 @@ const weatherIcon = document.getElementById("img");
   } else if (weatherForecast.daily.weathercode == 0) {
     weatherElement.textContent = "Lucky you! Clear skies today! ☁";
     weatherIcon.setAttribute("src", "clear.png")
-  }
+  }else if (weatherForecast.daily.weathercode == 1 || weatherForecast.daily.weathercode == 2 ||weatherForecast.daily.weathercode == 3) {
+    weatherElement.textContent = "Mainly clear, partly cloudy, and overcast";
+    weatherIcon.setAttribute("src", "clouds.png")
+}else if (weatherForecast.daily.weathercode == 51 || weatherForecast.daily.weathercode == 53 ||weatherForecast.daily.weathercode == 55) {
+  weatherElement.textContent = "Urgh! Drizzle, drizzle!";
+  weatherIcon.setAttribute("src", "drizzle1.png")
+}
+
 }
 
 // Waits for the DOM to be fully loaded and then displays the weather
