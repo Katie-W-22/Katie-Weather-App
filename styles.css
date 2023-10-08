@@ -1,0 +1,37 @@
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #5b548a;
+  margin: 0;
+  color: white;
+  font-family: american typewriter, serif;
+}
+  
+  .weather-card {
+    border: solid white 20px;
+    background: linear-gradient(135deg,#00feba,#5b548a);
+    background-color: #98f9a7;
+    padding-left: 50px;
+    border-radius: 500px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: auto;
+    margin-left: 100px;
+    margin-right:100px;
+    font-family: american typewriter, serif;
+  }
+
+h1{
+  color: white;
+  font-family: american typewriter, serif;
+text-align: center;
+  }
+
+  p{
+    font-size: 20px;
+  }
+
+img {
+  height: 150px;
+}
