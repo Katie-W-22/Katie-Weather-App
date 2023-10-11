@@ -1,4 +1,4 @@
-// console.log ("Hello Thundercats!");
+
 
 // Main function to retrieve and display the weather
 //Asynchronously retreives weather and displays it
@@ -74,3 +74,53 @@ const weatherIcon = document.getElementById("img");
 
 // Waits for the DOM to be fully loaded and then displays the weather
 document.addEventListener("DOMContentLoaded", getAndDisplayWeather);
+
+
+//getting long lat from postcode
+//https://api.postcodes.io/postcodes/GU50BD
+
+
+// Main function to retrieve and display the postcode
+//Asynchronously retreives postcode and displays it
+async function getAndDisplayPostcode() {
+  const postcode = await retrievePostcode();
+  displayPostcode(postcode);
+}
+
+// Function to retrieve the weather
+async function retrievePostcode() {
+  //Send GET request to the meteo weather API. Await the response
+  const response = await fetch(
+    "https://api.postcodes.io/postcodes/WN57XF",
+    {
+      headers: {
+        Accept: "application/json",
+      },
+    }
+  );
+
+  //Check if response failed, if so log an error and halt the app
+  if (!response.ok) {
+    console.error(`Status: ${response.status}`);
+    console.error(`Text: ${await response.text()}`);
+    return;
+  }
+
+  //return the parsed JSON from the response (which contains weather object)
+  const data2 = await response.json();
+  return data2;
+}
+
+//test retrievePostcodewith console.log();
+// console.log(retrievePostcode);
+
+// Function to update the DOM with the provided weather
+function displayPostcode(postcode) {
+  const longElement = document.getElementById("long");
+  longElement.textContent = `Longitude is ${postcode.result.longitude}`;
+  const latElement = document.getElementById("lat");
+  latElement.textContent = `Latitude is ${postcode.result.latitude}`;
+}
+
+// Waits for the DOM to be fully loaded and then displays the weather
+document.addEventListener("DOMContentLoaded", getAndDisplayPostcode);
