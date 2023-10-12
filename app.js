@@ -91,7 +91,7 @@ async function getAndDisplayPostcode() {
 async function retrievePostcode() {
   //Send GET request to the meteo weather API. Await the response
   const response = await fetch(
-    "https://api.postcodes.io/postcodes/WN57XF",
+    "https://api.postcodes.io/postcodes/${pcode}",
     {
       headers: {
         Accept: "application/json",
@@ -124,3 +124,8 @@ function displayPostcode(postcode) {
 
 // Waits for the DOM to be fully loaded and then displays the weather
 document.addEventListener("DOMContentLoaded", getAndDisplayPostcode);
+
+//see rock, paper, scissors task!
+//const longElement = document.getElementById("pcode");
+//document.addEventListener("click", )
+// see ${pcode}
