@@ -75,7 +75,7 @@ const weatherIcon = document.getElementById("img");
 // Waits for the DOM to be fully loaded and then displays the weather
 document.addEventListener("DOMContentLoaded", getAndDisplayWeather);
 
-
+/*
 //getting long lat from postcode
 //https://api.postcodes.io/postcodes/GU50BD
 
@@ -133,4 +133,4 @@ function displayLatLong(latLong) {
 // Waits for the DOM to be fully loaded and then displays the weather
 document.addEventListener("DOMContentLoaded", getAndDisplayLatLong);
 
-
+*/
