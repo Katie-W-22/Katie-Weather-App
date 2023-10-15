@@ -79,16 +79,24 @@ document.addEventListener("DOMContentLoaded", getAndDisplayWeather);
 //getting long lat from postcode
 //https://api.postcodes.io/postcodes/GU50BD
 
+//Get postcode
+const pcodeButton = document.getElementById("button");
+
+function getpostcode(){
+  let pcode = prompt("Please enter your postcode")
+}
+pcodeButton.addEventListener("click", getpostcode)
+
 
 // Main function to retrieve and display the postcode
 //Asynchronously retreives postcode and displays it
-async function getAndDisplayPostcode() {
-  const postcode = await retrievePostcode();
-  displayPostcode(postcode);
+async function getAndDisplayLatLong() {
+  const latLong = await retrieveLatLong();
+  displayLatLong(latLong);
 }
 
 // Function to retrieve the weather
-async function retrievePostcode() {
+async function retrieveLatLong() {
   //Send GET request to the meteo weather API. Await the response
   const response = await fetch(
     "https://api.postcodes.io/postcodes/${pcode}",
@@ -115,17 +123,14 @@ async function retrievePostcode() {
 // console.log(retrievePostcode);
 
 // Function to update the DOM with the provided weather
-function displayPostcode(postcode) {
+function displayLatLong(latLong) {
   const longElement = document.getElementById("long");
-  longElement.textContent = `Longitude is ${postcode.result.longitude}`;
+  longElement.textContent = `Longitude is ${latLong.result.longitude}`;
   const latElement = document.getElementById("lat");
-  latElement.textContent = `Latitude is ${postcode.result.latitude}`;
+  latElement.textContent = `Latitude is ${latLong.result.latitude}`;
 }
 
 // Waits for the DOM to be fully loaded and then displays the weather
-document.addEventListener("DOMContentLoaded", getAndDisplayPostcode);
+document.addEventListener("DOMContentLoaded", getAndDisplayLatLong);
 
-//see rock, paper, scissors task!
-//const longElement = document.getElementById("pcode");
-//document.addEventListener("click", )
-// see ${pcode}
+

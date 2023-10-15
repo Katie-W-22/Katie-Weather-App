@@ -36,3 +36,10 @@ img {
   height: 150px;
 }
 
+button{
+  background: #00feba;
+  color: white;
+  height:50px;
+  border: solid white 5px;
+  border-radius: 20px;
+}
