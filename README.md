@@ -1,5 +1,5 @@
 # Katie-Weather-App
-
+A classic beginner project! Learning about APIs with a weather app!
 https://github.com/Katie-W-22/Katie-Weather-App/assets/142401708/655a3d56-d914-4772-ac30-2c675f37982d
 
 
